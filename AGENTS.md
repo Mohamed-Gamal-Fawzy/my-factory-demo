@@ -1,7 +1,8 @@
 # my-factory-demo
 
 A small Node.js package (`index.js`, `package.json`) used to try out the
-software factory.
+software factory. `math.js` holds math helpers (`add`, `subtract`,
+`multiply`), tested in `math.test.js`.
 
 ## Setup
 
@@ -17,6 +18,10 @@ env files yet; if a `package-lock.json` appears, run `npm ci`.
 Run `bash factory/checks.sh`. It installs dependencies when there are any,
 runs `node --check` on every JS file, and runs `npm test` once `package.json`
 has a real test script (prefer Node's built-in runner: `node --test`).
+
+`npm test` runs `node --test math.test.js`. It names its test files explicitly
+so it never picks up copies under `.worktrees/`; add each new test file to that
+script.
 
 ## Software factory
 
